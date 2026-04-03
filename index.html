@@ -249,7 +249,6 @@
             color: white;
         }
     </style>
-    
 </head>
 <body class="antialiased bg-gradient-animate min-h-screen text-slate-900 dark:text-slate-50 transition-colors duration-300">
 
@@ -492,7 +491,7 @@
                     <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-3">Frontend Development</h3>
                     <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Transforming UI designs into clean, responsive, and interactive interfaces using modern frameworks.</p>
                     <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary-600 dark:text-primary-500"></i> TypeScript</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary-600 dark:text-primary-500"></i> React/TypeScript</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary-600 dark:text-primary-500"></i> Tailwind CSS</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary-600 dark:text-primary-500"></i> Responsive Design</li>
                     </ul>
@@ -904,7 +903,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+ <!-- Contact Section -->
 <section id="contact" class="py-24 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-16">
@@ -939,7 +938,7 @@
                         </div>
                         <div>
                             <p class="text-slate-500 text-sm">LinkedIn</p>
-                            <p class="text-slate-900 dark:text-white font-medium">https://linkedin.com/in/ahmedkaramgad</p>
+                            <p class="text-slate-900 dark:text-white font-medium">linkedin.com/in/ahmedkaramgad</p>
                         </div>
                     </a>
 
@@ -1018,6 +1017,68 @@
         </div>
     </div>
 </footer>
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/201023399735" target="_blank" class="fixed bottom-6 left-6 z-40 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-green-500/30 transition-all transform hover:scale-110 animate-float">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Chatbot Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Window -->
+        <div id="chatWindow" class="hidden mb-4 w-80 md:w-96 rounded-2xl glass shadow-2xl border border-slate-200 dark:border-white/10 overflow-hidden transform transition-all duration-300 origin-bottom-right bg-white/90 dark:bg-slate-900/90">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold">Ahmed's Assistant</h3>
+                        <p class="text-white/70 text-xs">Online</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="exportChat()" class="p-2 hover:bg-white/10 rounded-lg text-white/80 hover:text-white transition-colors" title="Export Chat">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="toggleChat()" class="p-2 hover:bg-white/10 rounded-lg text-white/80 hover:text-white transition-colors">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div id="chatMessages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50 dark:bg-slate-900/50">
+                <div class="chat-message chat-bot text-sm">
+                    👋 Hi! I'm Ahmed's assistant. Ask me anything about the services, pricing, or contact information.
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="p-3 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-white/5 flex gap-2 overflow-x-auto">
+                <button onclick="sendQuickMessage('price')" class="px-3 py-1.5 rounded-full bg-primary-500/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-xs whitespace-nowrap hover:bg-primary-500/20 dark:hover:bg-primary-500/30 transition-colors">Pricing</button>
+                <button onclick="sendQuickMessage('services')" class="px-3 py-1.5 rounded-full bg-primary-500/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-xs whitespace-nowrap hover:bg-primary-500/20 dark:hover:bg-primary-500/30 transition-colors">Services</button>
+                <button onclick="sendQuickMessage('contact')" class="px-3 py-1.5 rounded-full bg-primary-500/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-xs whitespace-nowrap hover:bg-primary-500/20 dark:hover:bg-primary-500/30 transition-colors">Contact</button>
+            </div>
+
+            <!-- Input -->
+            <div class="p-4 bg-white dark:bg-slate-800/80 border-t border-slate-200 dark:border-white/10">
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Ask about services..." class="flex-1 px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white text-sm placeholder-slate-500 focus:outline-none focus:border-primary-500" onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendMessage()" class="p-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white transition-colors">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="chatToggleBtn" class="w-14 h-14 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg shadow-primary-600/30 flex items-center justify-center hover:scale-110 transition-transform">
+            <i data-lucide="message-square" class="w-6 h-6"></i>
+        </button>
+    </div>
 
     <script>
         // Initialize Lucide Icons
