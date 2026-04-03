@@ -6,10 +6,9 @@ This is a modern, responsive **Landing Page** designed to showcase a personal br
 ---
 
 ## 🔗 Quick Links
--- **Live Demo:** Add your live site link here (https://ahmedgaddoo21.github.io/my-land-page/)
--- **Bug Reports:** Open an Issue](https://github.com/ahmedkaram/your-repo-name/issues)
+- **Live Demo:** [View Live Site](https://ahmedgaddoo21.github.io/my-land-page/)  
+- **Bug Reports:** [Open an Issue](https://github.com/ahmedkaram/your-repo-name/issues)
 
----
 
 ## 📌 Project Overview
 The goal of this project is to create a professional landing page that is:  
