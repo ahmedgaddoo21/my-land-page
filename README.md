@@ -6,9 +6,8 @@ This is a modern, responsive **Landing Page** designed to showcase a personal br
 ---
 
 ## 🔗 Quick Links
-- **Live Demo:** [Add your live site link here](#)  
-- **Design Source:** [Figma/Design file link](#)  
-- **Bug Reports:** [Open an Issue](#)  
+- **Live Demo:** [[Add your live site link here](https://ahmedgaddoo21.github.io/my-land-page/)](#)  
+-- **Bug Reports:** [Open an Issue](https://github.com/ahmedkaram/your-repo-name/issues) 
 
 ---
 
